@@ -15,30 +15,7 @@ A simple example project using the WickedEngine game engine.
 
 ## Setup Instructions
 
-# Set Up (test):
-
-```
-mkdir deps
-cd deps
-git clone https://github.com/turanszkij/WickedEngine.git
-```
-
-```
-mkdir build
-cd build
-
-cmake -G "Visual Studio 17 2022" ..
-// or
-cmake ..
-```
-```
-cmake --build . --config Release
-```
-```
-cmake --build . --config Debug
-```
-
-# build.bat (Main):
+### build.bat (Main):
 ```
 @echo off
 echo Building WickedEngineExample and its dependencies...
@@ -133,12 +110,35 @@ build.bat Debug
 ```
 build.bat Release
 ```
-# The script will:
+#### The script will:
  * Download WickedEngine to deps/WickedEngine if not present.
  * Build only the core WickedEngine library (excluding tests and ImGui examples) using MSBuild.
  * Build your project using CMake.
  * Run the executable if successful.
 
-# Output:
+#### Output:
  * Executable: build/Debug/WickedEngineExample.exe (or build/Release/ for Release)
  * Dependencies: shaders/, dxcompiler.dll, dxil.dll copied to the output directory.
+
+###  Set Up (test):
+
+```
+mkdir deps
+cd deps
+git clone https://github.com/turanszkij/WickedEngine.git
+```
+
+```
+mkdir build
+cd build
+
+cmake -G "Visual Studio 17 2022" ..
+// or
+cmake ..
+```
+```
+cmake --build . --config Release
+```
+```
+cmake --build . --config Debug
+```

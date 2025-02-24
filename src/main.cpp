@@ -1,5 +1,4 @@
-//#include "WickedEngine.h"
-#include "WickedEngine/WickedEngine.h"
+#include "WickedEngine.h"
 
 #include <windows.h>
 

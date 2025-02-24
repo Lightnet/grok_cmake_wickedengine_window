@@ -24,13 +24,13 @@ if(NOT EXISTS "${WICKED_ENGINE_DIR}")
     message(FATAL_ERROR "WickedEngine not found at ${WICKED_ENGINE_DIR}. Please clone it into deps/.")
 endif()
 
-# Include WickedEngine headers (WickedEngine.h is in deps/WickedEngine/)
+# Include WickedEngine headers
 target_include_directories(${PROJECT_NAME} PRIVATE
-    "${WICKED_ENGINE_DIR}"
+    "${WICKED_ENGINE_DIR}/WickedEngine"
 )
 
-# Link against pre-built WickedEngine library (Debug configuration)
-set(WICKED_ENGINE_BUILD_DIR "${WICKED_ENGINE_DIR}/build/x64/Debug")
+# Link against pre-built WickedEngine library
+set(WICKED_ENGINE_BUILD_DIR "${WICKED_ENGINE_DIR}/build/x64/$<CONFIG>")
 target_link_directories(${PROJECT_NAME} PRIVATE "${WICKED_ENGINE_BUILD_DIR}")
 target_link_libraries(${PROJECT_NAME} PRIVATE WickedEngine_Windows)
 
